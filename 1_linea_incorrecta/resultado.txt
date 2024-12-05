@@ -1,0 +1,17 @@
+Corpus Christi	25.38
+Pittsburgh	493.51
+Stockton	247.18
+Buffalo	483.82
+New York	296.8
+Las Vegas	53.26
+San Diego	66.08
+San Jose	215.82
+Austin	849.23
+Newark	39.75
+Houston	309.16
+Lincoln	136.9
+San Francisco	260.65
+Fort Worth	213.88
+Greensboro	290.82
+Omaha	235.63
+Boston	418.94
