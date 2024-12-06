@@ -2,7 +2,8 @@
 
 import sys
 
-ventas_por_pago={}
+salesTotal = 0
+oldKey = None
 
 # Loop around the data
 # It will be in the format key\tval
@@ -19,9 +20,17 @@ for line in sys.stdin:
 
     thisKey, thisSale = data_mapped
 
-    if thisKey not in ventas_por_pago or float(thisSale) > float(ventas_por_pago[thisKey]):
-        ventas_por_pago[thisKey] = thisSale
+    # Escribe un par key:value ante un cambio na key
+    # Reinicia o total
+    if oldKey and oldKey != thisKey:
+        print(oldKey+"\t"+str(salesTotal))
+        oldKey = thisKey;
+        salesTotal = 0
 
-for key, maxSale in ventas_por_pago.items():
-    print(key+"\t"+maxSale)
+    oldKey = thisKey
+    if float(salesTotal)<float(thisSale):
+        salesTotal=thisSale
 
+# Escribe o ultimo par, unha vez rematado o bucle
+if oldKey != None:
+    print(oldKey+"\t"+str(salesTotal))
