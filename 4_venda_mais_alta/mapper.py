@@ -8,7 +8,6 @@
 
 import sys
 
-vendas_por_categoria={}
 
 for line in sys.stdin:
     data = line.strip().split("\t")

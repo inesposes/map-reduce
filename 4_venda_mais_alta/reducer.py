@@ -22,9 +22,9 @@ for line in sys.stdin:
 
     # Escribe un par key:value ante un cambio na key
     # Reinicia o total
-    if salesTotal<thisSale:
+    if salesTotal<float(thisSale):
 	oldKey=thisKey
-	salesTotal=thisSale
+	salesTotal=float(thisSale)
 
 
 print('ola')
