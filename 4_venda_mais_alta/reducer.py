@@ -3,7 +3,7 @@
 import sys
 
 salesTotal = 0
-oldKey = None
+maxKey = None
 
 # Loop around the data
 # It will be in the format key\tval
@@ -23,9 +23,10 @@ for line in sys.stdin:
     # Escribe un par key:value ante un cambio na key
     # Reinicia o total
     if salesTotal<float(thisSale):
-	oldKey=thisKey
+	maxKey=thisKey
 	salesTotal=float(thisSale)
 
+print("ola")
 # Escribe o ultimo par, unha vez rematado o bucle
-if oldKey != None:
-    print(oldKey+"\t"+str(salesTotal))
+if maxKey != None:
+    print(maxKey+"\t"+str(salesTotal))
