@@ -19,13 +19,8 @@ for line in sys.stdin:
         continue
 
     thisKey, thisSale = data_mapped
-
-    # Escribe un par key:value ante un cambio na key
-    # Reinicia o total
-    if salesTotal<float(thisSale):
-	oldKey=thisKey
-	salesTotal=float(thisSale)
+	
+    salesTotal += float(thisSale)
 
 # Escribe o ultimo par, unha vez rematado o bucle
-if oldKey != None:
-    print(oldKey+"\t"+str(salesTotal))
+print(str(salesTotal))
