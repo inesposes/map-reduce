@@ -2,31 +2,19 @@
 
 import sys
 
-salesTotal = 0
-maxKey = None
-
-# Loop around the data
-# It will be in the format key\tval
-# Where key is the store name, val is the sale amount
-#
-# All the sales for a particular store will be presented,
-# then the key will change and we'll be dealing with the next store
+maxSale = 0
+maxPayment = None
 
 for line in sys.stdin:
     data_mapped = line.strip().split("\t")
     if len(data_mapped) != 2:
-        # Something has gone wrong. Skip this line.
         continue
+    _, thisValue = data_mapped
+    cost, payment =thisValue.strip().split(",")
 
-    thisKey, thisSale = data_mapped
+    if maxSale<float(cost):
+        maxPayment=payment
+        maxSale=float(cost)
 
-    # Escribe un par key:value ante un cambio na key
-    # Reinicia o total
-    if salesTotal<float(thisSale):
-	maxKey=thisKey
-	salesTotal=float(thisSale)
-
-print("ola")
-# Escribe o ultimo par, unha vez rematado o bucle
-if maxKey != None:
-    print(maxKey+"\t"+str(salesTotal))
+if maxPayment != None:
+    print(maxPayment+"\t"+str(maxSale))
