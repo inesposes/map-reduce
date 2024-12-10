@@ -6,7 +6,7 @@ Este repositorio contén o desenvolvemento dunha serie de exercicios relacionado
 
 - **`0_codigo_orixinal/`**: 
   - Contén os códigos orixinais proporcionados como punto de partida.
-  - Inclúe unha mostra reducida do dataset orixinal para realizar probas.
+  - Inclúe unha mostra reducida do dataset orixinal (purchases.txt) para realizar probas.
 
 - **Exercicios**: Cada exercicio está contido na súa propia carpeta, coa seguinte estrutura:
   - `mapper.py`: Script do mapper.
@@ -21,17 +21,9 @@ Este repositorio contén o desenvolvemento dunha serie de exercicios relacionado
 4. **Exercicio 1.4**: Obter o máximo absoluto de todas as vendas.
 5. **Exercicio 1.5**: Calcular o total de vendas.
 
-Cada un dos exercicios pode executarse tanto de forma manual desde consola como utilizando Hadoop para procesar datasets máis grandes nun sistema de arquivos distribuído.
+Para cada exercicio executar o seguinte comando:
+```
+mapred streaming -files mapper.py,reducer.py -input purchases.txt -output exercicio -mapper mapper.py -reducer reducer.py
+```
 
-## Execución con Hadoop
-
-Os scripts de mapper e reducer están deseñados para ser compatibles con Hadoop. Isto permite procesar grandes volúmenes de datos de forma distribuída.
-
-Para executar en Hadoop:
-1. Subir os datos ao sistema de arquivos distribuído (HDFS).
-2. Executar os scripts utilizando Hadoop Streaming.
-3. Consultar os resultados no arquivo `resultado.txt` correspondente a cada exercicio.
-
----
-Para calquera dúbida, revisa o contido dos scripts nas carpetas de cada exercicio.
 
