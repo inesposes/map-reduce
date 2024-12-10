@@ -3,22 +3,22 @@
 import sys
 
 salesTotal = 0
-oldCategory = None
+oldPayment = None
 
 for line in sys.stdin:
     data_mapped = line.strip().split("\t")
     if len(data_mapped) != 2:
         continue
 
-    thisCategory, thisSale = data_mapped
+    thisPayment, thisSale = data_mapped
 
-    if oldCategory and oldCategory != thisCategory:
-        oldCategory = thisCategory;
+    if oldPayment and oldPayment != thisPayment:
+        oldPayment = thisPayment;
         salesTotal = 0
 
-    oldCategory = thisCategory
+    oldPayment = thisPayment
     if float(salesTotal)<float(thisSale):
         salesTotal=thisSale
 
-if oldCategory != None:
-    print(oldCategory+"\t"+str(salesTotal))
+if oldPayment != None:
+    print(oldPayment+"\t"+str(salesTotal))
