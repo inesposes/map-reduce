@@ -25,5 +25,10 @@ Para cada exercicio executar o seguinte comando:
 ```
 mapred streaming -files mapper.py,reducer.py -input purchases.txt -output exercicio -mapper mapper.py -reducer reducer.py
 ```
+Logo para ver os resultados:
+```
+hdfs dfs -get exercicio
+cat exercicio/*
+```
 
 
