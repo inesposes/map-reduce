@@ -14,4 +14,4 @@ for line in sys.stdin:
     if len(data)!=6:
 	continue
     date, time, store, item, cost, payment = data    
-    print(date+"\t"+cost+","+payment)
+    print("global\t"+cost+","+payment)
