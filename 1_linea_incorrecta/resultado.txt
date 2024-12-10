@@ -1,17 +1,13 @@
-Corpus Christi	25.38
-Pittsburgh	493.51
-Stockton	247.18
-Buffalo	483.82
-New York	296.8
-Las Vegas	53.26
-San Diego	66.08
-San Jose	215.82
-Austin	849.23
-Newark	39.75
-Houston	309.16
-Lincoln	136.9
-San Francisco	260.65
-Fort Worth	213.88
-Greensboro	290.82
-Omaha	235.63
-Boston	418.94
+RESULTADO
+- Fixen unha execución co .txt normal e outra cun .txt no que estropeei dúas liñas
+onde estaban as cidades San Jose e Fort Worth
+
+-Como se pode observar, o resultado da segunda execución (Exec 2) sempre é menor 
+que o da primeira porque hai unha venta menos que se está sumando
+
+Poño o  resultado de executar "cat ex1/* | grep -i 'Nome cidade'" 
+Exec 1: San Jose        9936721.41
+Exec 2: San Jose        9936507.36
+-------------------------------------
+Exec 1: Fort Worth      10120830.65
+Exec 2: Fort Worth      10120677.08
